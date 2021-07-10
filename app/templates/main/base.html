@@ -15,9 +15,9 @@
   <body>
     <nav id="main-menu" class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          Tech Freelancers
-        </a>
+        <span class="navbar-item has-text-primary">
+          <h2 class="is-size-2" style="font-family: 'Share Tech', sans-serif;">Tech Freelancers</h2>
+        </span>
     
         <a @click.prevent="isActive=!isActive" 
           role="button" class="navbar-burger" aria-label="menu" 
@@ -30,17 +30,14 @@
     
       <div :class="isActive ? 'is-active' : ''" id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item" href="{{ url_for('main.index') }}">
             Home
           </a>
-    
           <a class="navbar-item">
             Projects
           </a>
-    
-        </div>
-    
-        <div class="navbar-end">
           <div class="navbar-item">
             <i class="fab fa-facebook fa-2x"></i>
           </div>
