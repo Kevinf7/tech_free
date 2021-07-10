@@ -1,0 +1,116 @@
+{% extends "main/base.html" %}
+{% block title %}Tech Freelancers - Home{% endblock %}
+
+{% block content %}
+<section class="hero is-medium" style="background-color: #EF8C49;">
+  <div class="hero-body has-text-centered">
+    <p class="is-size-2 has-text-weight-bold" style="color:#FFFFFF;">
+      An Economic Solution for your Mobile App and Website
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h1 class="title">Typical approach</h1>
+  <div class="content">
+    <p>Currently, everyone is using separate technologies to develop Website and Mobile Apps such as Python, PHP or Javascript 
+    for a website, Java or Kotlin for an Android App and Objective-C or Swift for an iOS App.</p>
+    <p>You need to pay three separate software developers for Website + Android App + iOS App.</p>
+  </div>
+  <h2 class="subtitle">This is an an expensive solution which only large corporations can afford!</h2>
+</section>
+
+<section class="hero is-info is-small">
+  <div class="hero-body has-text-centered">
+      <p class="title" style="color:#FFFFFF;">
+        <br/>A better approach - Hybrid technology<br/><br/>
+      </p>
+  </div>
+</section>
+
+<section class="section">
+  <h1 class="title">Hybrid technology</h1>
+  <div class="content">
+    <p>We use Hybrid technology, which will deliver a Website + Android + iOS App using a single codebase which
+    means one single development cost.</p>
+    <p>Find out more about hybrid technology via the links below.</p>
+    <ul>
+      <li>Hybrid Technology:
+        <a href="https://quasar.dev/introduction-to-quasar">https://quasar.dev/introduction-to-quasar</a>
+      </li>
+      <li>YouTube videos on Technology:
+        <a href="https://www.youtube.com/watch?v=GV-D85D9KJQ">https://www.youtube.com/watch?v=GV-D85D9KJQ</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="hero is-small" style="background-color: #4AD5C0;">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <h2 class="subtitle" style="color:#FFFFFF;">Some technologies that we use</h2>
+      <img src="{{ url_for('static', filename='_main/_img/quasar_logo.svg') }}" width="80" hspace="10">
+      <img src="{{ url_for('static', filename='_main/_img/vue_js.svg') }}" width="80" hspace="10">
+      <img src="{{ url_for('static', filename='_main/_img/mysql.svg') }}" width="140" hspace="10">
+      <img src="{{ url_for('static', filename='_main/_img/flask.svg') }}" width="180" hspace="10">
+      <img src="{{ url_for('static', filename='_main/_img/python.svg') }}" width="200" hspace="10">
+    </div>
+    <br/>
+  </div>
+</section>
+
+<section class="hero is-info" style="color:#969E9D;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="content">
+        <table width="100%">
+          <tr>
+            <td width="50%">
+              <h4 style="color:#FEFFFF;">Contact</h4>
+              <div class="is-size-6">
+              <p>We are based in the western suburbs of Sydney. Feel free to contact us with your project ideas.
+              <hr class="is-dark"/>
+              <i class="fas fa-envelope"></i>
+              Email: abc@abc.com
+              <hr class="is-dark"/>
+              <i class="fas fa-phone"></i>
+              Phone: 123 123 123</p>
+              </div>
+            </td>
+            <td width="50%">
+              <h4 style="color:#FEFFFF;">Send us a message</h4>
+              <form >
+                <div class="field">
+                  <input class="input is-small footer-form" type="text" placeholder="Name" class="color">
+                </div>
+                <div class="field">                
+                  <input class="input is-small footer-form" type="text" placeholder="Email">
+                </div>
+                <div class="field">
+                  <input class="input is-small footer-form" type="text" placeholder="Phone">
+                </div>
+                <div class="field">
+                  <textarea class="textarea is-small footer-form" type="textarea" placeholder="Message"></textarea>
+                </div>
+                <p class="control">
+                  <a class="button is-primary is-small" style="color:#FEFFFF;">
+                    Submit
+                  </a>
+                </p>
+              </form>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small" style="background-color: #161C28;">
+  <div class="hero-body has-text-centered">
+      <p class="is-size-7" style="color:#969E9D;">
+        Copyright © 2021 Tech Freelancers
+      </p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "shared/base_main.html" %}
+{% block title %}My website{% endblock %}
+
+{% block app_content %}
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title">Pages</p>
+      <div class="content">
+        <p>{{ total_pages }} total pages</p>
+        {% if page_latest %}
+        <p><span>Last page updated was "{{ page_latest.name }}" 
+          on {{ moment(page_latest.last_publish_date).format('D MMM YYYY') }}</span></p>
+        {% endif %}
+        <a href="{{ url_for('admin_page.page') }}">Edit Pages</a>
+      </div>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title">Media</p>
+      <div class="content">
+        <p>{{ total_media }} total images</p>
+        {% if image_latest %}
+          <p>Latest uploads:<br/>
+          {% for img in image_latest %}
+          <img width="80" src="{{ url_for('static',filename='uploads/' ~ img.image_type.name ~ '/thumbnails/' ~ img.thumbnail) }}">
+          {% endfor %}
+          </p>
+        {% endif %}
+        <a href="{{ url_for('admin_media.media') }}">Edit Media</a>
+      </div>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <div class="content">
+        <p class="title">Messages</p>
+        <div class="content">
+          <p>{{ total_message }} total messages</p>
+          {% if new_message > 0 %}
+          <p><span class="has-background-warning">You have {{ new_message }} new messages since last login</span></p>
+          {% else %}
+          <p>You have {{ new_message }} new messages since last login</p>
+          {% endif %}
+          <a href="{{ url_for('admin_message.message') }}">Edit Messages</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

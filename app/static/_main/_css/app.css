@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Arial', serif;
+}
+body {
+    background-color: #FFFFFF;
+}
+hr {
+    background-color: #3F4753;
+    height: 1px;
+}
+.footer-form {
+    border-color: #3F4753;
+    color: #969E9D;
+}
+

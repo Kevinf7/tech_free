@@ -1,0 +1,184 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+<div class="columns is-gapless" style="min-height:100vh;">
+  <div class="column is-narrow has-background-primary">
+    <div class="hero is-small is-primary">
+      <div class="hero-body">
+        <div class="title is-4 has-text-centered has-text-white">
+          <img src="{{ url_for('static', filename='images/crown.svg') }}" width="60"/><br/>
+          Flask CMS
+        </div>
+      </div>
+    </div>
+    <aside class="menu p-5">
+      <ul class="menu-list ">
+        <li>
+          <a href="{{ url_for('main.index') }}">
+            <span class="menu-spacing"><i class="fas fa-arrow-left"></i></span>
+            Main Site
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('admin_main.index') }}">
+            <span class="menu-spacing"><i class="fas fa-home"></i></span>
+            Home
+          </a>
+        </li>
+      </ul>
+      {% if config['ADMIN_BLOG'] %}
+      <p class="menu-label">
+        Blog
+      </p>
+      <ul class="menu-list">
+        <li>
+          <a href="{{ url_for('admin_blog.blog') }}">
+            <span class="menu-spacing"><i class="fab fa-microblog"></i></span>
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('admin_blog.tag') }}">
+            <span class="menu-spacing"><i class="fas fa-tag"></i></span>
+            Tags
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('admin_blog.comment') }}">
+            <span class="menu-spacing"><i class="far fa-comment"></i></span>
+            Comments
+          </a>
+        </li>
+        <li>
+          {% if config['ADMIN_PAGE'] %}
+          <a href="{{ url_for('admin_media.media',show='blog') }}">
+          {% else %}
+          <a href="{{ url_for('admin_media.media') }}"></a>
+          {% endif %}
+            <span class="menu-spacing"><i class="far fa-file-image"></i></span>
+            Media
+          </a>
+        </li>
+      </ul>
+      {% endif %}
+      {% if config['ADMIN_PAGE'] %}
+      <p class="menu-label">
+        Pages
+      </p>
+      <ul class="menu-list">
+        <li>
+          <a href="{{ url_for('admin_page.page') }}">
+            <span class="menu-spacing"><i class="far fa-file-alt"></i></span>
+            Pages
+          </a>
+        </li>
+        <li>
+          {% if config['ADMIN_BLOG'] %}
+          <a href="{{ url_for('admin_media.media',show='page') }}">
+          {% else %}
+          <a href="{{ url_for('admin_media.media') }}">
+          {% endif %}
+            <span class="menu-spacing"><i class="far fa-file-image"></i></span>
+            Media
+          </a>
+        </li>
+      </ul>
+      {% endif %}
+      {% if config['ADMIN_MESSAGE'] %}
+      <p class="menu-label">
+        Contact Form
+      </p>
+      <ul class="menu-list">
+        <li>
+          <a href="{{ url_for('admin_message.message') }}">
+            <span class="menu-spacing"><i class="far fa-id-badge"></i></span>
+            Messages
+          </a>
+        </li>
+      </ul>
+      {% endif %}
+      <hr style="border-top: 1px solid #DDDDDD;"/>
+      <ul class="menu-list">
+        <li><div class="is-size-7 has-text-centered">
+          <a href="{{ url_for('admin_main.about') }}">About Flask CMS</a>
+        </div></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="column">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <article class="message is-{{ category }}">
+            <div class="message-body">{{ message }}</div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <div id="main-menu" class="mb-5">
+      <nav class="level is-mobile">
+        <div class="level-left ml-5"> 
+          {% if breadcrumb %}
+          <div class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+          {% endif %}
+          {% for b in breadcrumb %}
+          {% if not loop.last %}
+            <li>
+          {% else %}
+            <li class="has-text-weight-bold">
+          {% endif %}
+              <a href="{{ b.url }}">
+          {% if b.icon %}    
+              <span class="mr-2">{{ b.icon|safe }}</span> 
+          {% endif %}
+              {{ b.name }}</a></li>
+          {% endfor %}
+          {% if breadcrumb %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+        <div class="level-right mr-5">
+          <div class="level-item">
+            <div class="navbar" role="navigation" aria-label="dropdown navigation">
+              <div class="navbar-item has-dropdown" :class="profileToggle ? 'is-active' : ''">
+                <a class="navbar-link" @click.prevent="profileToggle=!profileToggle">
+                  {{ current_user.firstname }} {{ current_user.lastname }}
+                </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="{{ url_for('admin_auth.logout') }}">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container is-fluid pl-5 pr-5 pt-3 pb-5">
+    {% block app_content %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <!--Vue dev version-->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <!--Vue prod version
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  -->
+  <script>
+  new Vue({
+    el: '#main-menu',
+    delimiters: ['[[', ']]'],
+    data() {
+      return {
+        profileToggle: false
+      }
+    }
+  })
+  </script>
+{% endblock %}
+

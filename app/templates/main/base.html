@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Tech Freelancers">
+    <title>{% block title %}{% endblock %}</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+    <!-- Flask moment -->
+    {{ moment.include_moment() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='_main/_css/mybulma.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='_main/_css/app.css') }}" type="text/css">
+  </head>
+  <body>
+    <nav id="main-menu" class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          Tech Freelancers
+        </a>
+    
+        <a @click.prevent="isActive=!isActive" 
+          role="button" class="navbar-burger" aria-label="menu" 
+          aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div :class="isActive ? 'is-active' : ''" id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+    
+          <a class="navbar-item">
+            Projects
+          </a>
+    
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <i class="fab fa-facebook fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    <!--Vue dev version-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!--Vue prod version
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    -->
+    <script>
+      new Vue({
+        el: '#main-menu',
+        delimiters: ['[[', ']]'],
+        data() {
+          return {
+            isActive: false
+          }
+        }
+      })
+    </script>
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

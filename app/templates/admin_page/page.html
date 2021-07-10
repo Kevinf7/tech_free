@@ -1,0 +1,40 @@
+{% extends "shared/base_main.html" %}
+{% from 'shared/macros/_pagination.html' import pagination %}
+{% block title %}Page{% endblock %}
+
+{% block app_content %}
+<div class="table-container">
+  <table class="table is-narrow is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Published</th>
+        <th>by</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for page in pages.items %}
+      <tr>
+        {% if page.name == 'contact' %}
+        <td>Contact Us</td>
+        {% elif page.name == 'home' %}
+        <td>Home</td>
+        {% endif %}
+        <td>{{ moment(page.last_publish_date).format('D MMM YYYY hh:mm') }}</td>
+        <td>{{ page.last_publish_by.email }}</td>
+        {% if page.name == 'contact' %}
+        <td class="has-text-right"><a href="{{ url_for('admin_page.page_contact') }}"><i class="far fa-edit"></i></a></td>
+        {% elif page.name == 'home' %}
+        <td class="has-text-right"><a href="{{ url_for('admin_page.page_home') }}"><i class="far fa-edit"></i></a></td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if pages.pages > 1 %}
+{{ pagination(comment,'admin_page.page') }}
+{% endif %}
+{% endblock %}
