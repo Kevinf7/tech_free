@@ -2,122 +2,191 @@
 {% block title %}Tech Freelancers - Home{% endblock %}
 
 {% block content %}
-<section class="hero is-medium">
-  <div class="hero-body has-text-centered" style="background-image: url('{{ url_for('static', filename='_main/_img/slide-bg-1.jpg') }}')">
-    <p class="is-size-2 has-text-weight-bold" style="color:#FFFFFF;">
-      An Economic Solution for your Mobile App and Website
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container has-text-centered">
-    <h1 class="title">The typical approach</h1>
-    <div class="content">
-      <p>Currently, everyone is using separate technologies to develop Website and Mobile Apps such as Python, PHP or Javascript 
-      for a website, Java or Kotlin for an Android App and Objective-C or Swift for an iOS App.</p>
-      <p>You need to pay three separate software developers for Website + Android App + iOS App.</p>
-    </div>
-    <h2 class="subtitle">This is an an expensive solution which only large corporations can afford!</h2>
-    <img src="{{ url_for('static', filename='_main/_img/currently.gif') }}" width="500">
-  </div>
-</section>
-
-<section class="hero is-info is-small">
-  <div class="hero-body has-text-centered">
-      <p class="title" style="color:#FFFFFF;">
-        <br/>A better approach - Hybrid technology<br/><br/>
+<div id="this-block">
+  <section class="hero is-medium">
+    <div class="hero-body has-text-centered" style="background-image: url('{{ url_for('static', filename='_main/_img/slide-bg-1.jpg') }}')">
+      <p class="is-size-2 has-text-weight-bold" style="color:#FFFFFF;">
+        An Economic Solution for your Mobile App and Website
       </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container has-text-centered">
-    <h1 class="title">A better approach</h1>
-    <div class="content">
-      <p>We use Hybrid technology, which will deliver a Website + Android + iOS App using a single codebase which
-      means one single development cost.</p>
-      <p>Find out more about hybrid technology via the links below.</p>
-      <ul style="display: inline-block;" class="has-text-left">
-        <li>Hybrid Technology:
-          <a href="https://quasar.dev/introduction-to-quasar">https://quasar.dev/introduction-to-quasar</a>
-        </li>
-        <li>YouTube videos on Technology:
-          <a href="https://www.youtube.com/watch?v=GV-D85D9KJQ">https://www.youtube.com/watch?v=GV-D85D9KJQ</a>
-        </li>
-      </ul>
     </div>
-    <img src="{{ url_for('static', filename='_main/_img/now.gif') }}" width="600">
-  </div>
-</section>
+  </section>
 
-<section class="hero is-small" style="background-color: #4AD5C0;">
-  <div class="hero-body has-text-centered">
-    <div class="container">
-      <h2 class="subtitle" style="color:#FFFFFF;">We use these technologies</h2>
-      <img src="{{ url_for('static', filename='_main/_img/quasar_logo.svg') }}" width="80" hspace="10">
-      <img src="{{ url_for('static', filename='_main/_img/vue_js.svg') }}" width="80" hspace="10">
-      <img src="{{ url_for('static', filename='_main/_img/mysql.svg') }}" width="140" hspace="10">
-      <img src="{{ url_for('static', filename='_main/_img/flask.svg') }}" width="180" hspace="10">
-      <img src="{{ url_for('static', filename='_main/_img/python.svg') }}" width="200" hspace="10">
-    </div>
-    <br/>
-  </div>
-</section>
-
-<section class="hero is-info" style="color:#969E9D;">
-  <div class="hero-body">
-    <div class="container">
+  <section class="section">
+    <div class="container has-text-centered">
+      <h1 class="title">The typical approach</h1>
       <div class="content">
-        <table width="100%">
-          <tr>
-            <td width="50%">
-              <h4 style="color:#FEFFFF;">Contact</h4>
-              <div class="is-size-6">
-              <p>We are based in the western suburbs of Sydney. Feel free to contact us. 
-                We will be happy to discuss your project ideas and work out the best solution for you.</p>
-              <hr class="is-dark"/>
-              <i class="fas fa-envelope"></i>
-              Email: abc@abc.com
-              <hr class="is-dark"/>
-              <i class="fas fa-phone"></i>
-              Phone: 123 123 123</p>
-              </div>
-            </td>
-            <td width="50%">
-              <h4 style="color:#FEFFFF;">Send us a message</h4>
-              <form >
-                <div class="field">
-                  <input class="input is-small footer-form" type="text" placeholder="Name" class="color">
+        <p>Currently, everyone is using separate technologies to develop Website and Mobile Apps such as Python, PHP or Javascript 
+        for a website, Java or Kotlin for an Android App and Objective-C or Swift for an iOS App.</p>
+        <p>You need to pay three separate software developers for Website + Android App + iOS App.</p>
+      </div>
+      <h2 class="subtitle">This is an an expensive solution which only large corporations can afford!</h2>
+      <img src="{{ url_for('static', filename='_main/_img/currently.gif') }}" width="500">
+    </div>
+  </section>
+
+  <section class="hero is-info is-small">
+    <div class="hero-body has-text-centered">
+        <p class="title" style="color:#FFFFFF;">
+          <br/>A better approach - Hybrid technology<br/><br/>
+        </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container has-text-centered">
+      <h1 class="title">A better approach</h1>
+      <div class="content">
+        <p>We use Hybrid technology, which will deliver a Website + Android + iOS App using a single codebase which
+        means one single development cost.</p>
+        <p>Find out more about hybrid technology via the links below.</p>
+        <ul style="display: inline-block;" class="has-text-left">
+          <li>Hybrid Technology:
+            <a href="https://quasar.dev/introduction-to-quasar">https://quasar.dev/introduction-to-quasar</a>
+          </li>
+          <li>YouTube videos on Technology:
+            <a href="https://www.youtube.com/watch?v=GV-D85D9KJQ">https://www.youtube.com/watch?v=GV-D85D9KJQ</a>
+          </li>
+        </ul>
+      </div>
+      <img src="{{ url_for('static', filename='_main/_img/now.gif') }}" width="600">
+    </div>
+  </section>
+
+  <section class="hero is-small" style="background-color: #4AD5C0;">
+    <div class="hero-body has-text-centered">
+      <div class="container">
+        <h2 class="subtitle" style="color:#FFFFFF;">We use these technologies</h2>
+        <img src="{{ url_for('static', filename='_main/_img/quasar_logo.svg') }}" width="80" hspace="10">
+        <img src="{{ url_for('static', filename='_main/_img/vue_js.svg') }}" width="80" hspace="10">
+        <img src="{{ url_for('static', filename='_main/_img/mysql.svg') }}" width="140" hspace="10">
+        <img src="{{ url_for('static', filename='_main/_img/flask.svg') }}" width="180" hspace="10">
+        <img src="{{ url_for('static', filename='_main/_img/python.svg') }}" width="200" hspace="10">
+      </div>
+      <br/>
+    </div>
+  </section>
+
+  <a name="contact"></a>
+  <section class="hero is-info" style="color:#969E9D;">
+    <div class="hero-body">
+      <div class="container">
+        <div class="content">
+          <table width="100%">
+            <tr>
+              <td width="50%">
+                <h4 style="color:#FEFFFF;">Contact</h4>
+                <div class="is-size-6">
+                <p>We are based in the western suburbs of Sydney. Feel free to contact us. 
+                  We will be happy to discuss your project ideas and work out the best solution for you.</p>
+                <hr class="is-dark"/>
+                <i class="fas fa-envelope"></i>
+                Email: abc@abc.com
+                <hr class="is-dark"/>
+                <i class="fas fa-phone"></i>
+                Phone: 123 123 123</p>
                 </div>
-                <div class="field">                
-                  <input class="input is-small footer-form" type="text" placeholder="Email">
-                </div>
-                <div class="field">
-                  <input class="input is-small footer-form" type="text" placeholder="Phone">
-                </div>
-                <div class="field">
-                  <textarea class="textarea is-small footer-form" type="textarea" placeholder="Message"></textarea>
-                </div>
-                <p class="control">
-                  <a class="button is-primary is-small" style="color:#FEFFFF;">
-                    Submit
-                  </a>
-                </p>
-              </form>
-            </td>
-          </tr>
-        </table>
+              </td>
+              <td width="50%">
+                <h4 style="color:#FEFFFF;">Send us a message</h4>
+                <form ref="contactForm" action="{{ url_for('main.contact') }}"  method="post">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                  <div class="field">
+                    <input name="name" class="input is-small footer-form" type="text" 
+                    v-model="contactForm.name" placeholder="Name">
+                    <p v-if="errorMsg[0]" class="help is-danger">[[ errorMsg[0] ]]</p>
+                  </div>
+                  <div class="field">                
+                    <input name="email" class="input is-small footer-form" type="text" 
+                    v-model="contactForm.email" placeholder="Email">
+                    <p v-if="errorMsg[1]" class="help is-danger">[[ errorMsg[1] ]]</p>
+                  </div>
+                  <div class="field">
+                    <input name="phone" class="input is-small footer-form" type="text" 
+                    v-model="contactForm.phone" placeholder="Phone">
+                    <p v-if="errorMsg[2]" class="help is-danger">[[ errorMsg[2] ]]</p>
+                  </div>
+                  <div class="field">
+                    <textarea name="message" class="textarea is-small footer-form" 
+                    v-model="contactForm.message" type="textarea"></textarea>
+                    <p v-if="errorMsg[3]" class="help is-danger">[[ errorMsg[3] ]]</p>
+                  </div>
+                  <div class="control">
+                    <input name="submit_btn" type="submit" @click.prevent="doValidate" 
+                    class="button is-primary is-small" style="color:#FEFFFF;" value="Submit"/>
+                  </div>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero is-small" style="background-color: #161C28;">
-  <div class="hero-body has-text-centered">
-      <p class="is-size-7" style="color:#969E9D;">
-        Copyright © 2021 Tech Freelancers
-      </p>
-  </div>
-</section>
+  <section class="hero is-small" style="background-color: #161C28;">
+    <div class="hero-body has-text-centered">
+        <p class="is-size-7" style="color:#969E9D;">
+          Copyright © 2021 Tech Freelancers
+        </p>
+    </div>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  new Vue({
+    el: '#this-block',
+    delimiters: ['[[', ']]'],
+    data() {
+      return {
+        contactForm: {
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        },
+        errorMsg: ['','','','']
+      }
+    },
+    methods: {
+      clearErrors() {
+        for (let i=0; i<this.errorMsg.length;i++) {
+          this.errorMsg[i] = ''
+        }
+      },
+      hasError() {
+        err = false
+        for(let i=0; i<this.errorMsg.length; i++) {
+          if(this.errorMsg[i] != '') err = true
+        }
+        return err
+      },
+      doValidate(evt) {
+        this.clearErrors()
+        if (this.contactForm.name.length == 0) {
+          Vue.set(this.errorMsg, 0, 'This field is mandatory')
+        } else if (this.contactForm.name.length > 20) {
+          Vue.set(this.errorMsg, 0, 'Maximum 20 characters')
+        }
+        if (this.contactForm.email.length == 0) {
+          Vue.set(this.errorMsg, 1, 'This field is mandatory')
+        } else if (this.contactForm.email.length > 50) {
+          Vue.set(this.errorMsg, 1, 'Maximum 50 characters')
+        }
+        if (this.contactForm.phone.length > 20) {
+          Vue.set(this.errorMsg, 2, 'Maximum 20 characters')
+        }
+        if (this.contactForm.message.length > 2000) {
+          Vue.set(this.errorMsg, 3, 'Maximum 2000 characters')
+        }
+        if (!this.hasError()) {
+          this.$nextTick(() => {
+            this.$refs.contactForm.submit()
+          })
+        }
+      }
+    }
+  })
+</script>
 {% endblock %}

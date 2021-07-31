@@ -35,9 +35,6 @@ def create_app(config_class=Config):
         from app.admin_main import bp as admin_main_bp
         app.register_blueprint(admin_main_bp, url_prefix='/admin')
 
-        from app.admin_message import bp as admin_message_bp
-        app.register_blueprint(admin_message_bp, url_prefix='/admin')
-
         from app.admin_page import bp as admin_page_bp
         app.register_blueprint(admin_page_bp, url_prefix='/admin')
 
@@ -45,6 +42,9 @@ def create_app(config_class=Config):
         app.register_blueprint(admin_media_bp, url_prefix='/admin')
 
         '''
+
+        from app.admin_message import bp as admin_message_bp
+        app.register_blueprint(admin_message_bp, url_prefix='/admin')
 
         from app.admin_errors import bp as errors_bp
         app.register_blueprint(errors_bp)

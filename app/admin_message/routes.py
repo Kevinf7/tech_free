@@ -8,7 +8,7 @@ from app.breadcrumb import set_breadcrumb
 
 # ADMIN MESSAGE routes 
 
-@bp.route('/message',methods=['GET'])
+@bp.route('/message', methods=['GET'])
 @login_required
 @set_breadcrumb('home message')
 def message():
@@ -19,7 +19,7 @@ def message():
     return render_template('admin_message/message.html',messages=messages)
 
 
-@bp.route('/message/del_message',methods=['POST'])
+@bp.route('/message/del_message', methods=['POST'])
 @login_required
 def del_message():
     msg_id = request.form.getlist('id')

@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='_main/_css/app.css') }}" type="text/css">
   </head>
   <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+        <article class="message is-{{ category }}">
+          <div class="message-body">{{ message }}</div>
+        </article>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
     <nav id="main-menu" class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <span class="navbar-item has-text-primary">
@@ -37,6 +46,9 @@
           </a>
           <a class="navbar-item">
             Projects
+          </a>
+          <a class="navbar-item" href="#contact">
+            Contact
           </a>
           <div class="navbar-item">
             <i class="fab fa-facebook fa-2x"></i>
