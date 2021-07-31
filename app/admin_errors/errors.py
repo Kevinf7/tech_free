@@ -4,6 +4,7 @@ from . import bp
 
 @bp.app_errorhandler(400)
 def bad_request(e):
+    print ('404 ', e)
     return render_template('admin_errors/400.html'), 400
 
 @bp.app_errorhandler(404)
