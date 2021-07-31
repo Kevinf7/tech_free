@@ -12,6 +12,8 @@ class Breadcrumb(object):
     def init_app(self, app):
         with app.app_context():
             '''
+            Breadcrumb.map.append({'key': 'home', 'name': 'Home', 
+                'url': url_for('admin_main.index'), 'icon': '<i class="fas fa-home"></i>'})
             Breadcrumb.map.append({'key': 'page', 'name': 'Pages', 
                 'url': url_for('admin_page.page'), 'icon': ''})
             Breadcrumb.map.append({'key': 'page-contact', 'name': 'Contact Us', 
@@ -23,8 +25,7 @@ class Breadcrumb(object):
             Breadcrumb.map.append({'key': 'comment', 'name': 'Comments', 
                 'url': url_for('admin_blog.comment'), 'icon': ''})
             '''
-            Breadcrumb.map.append({'key': 'home', 'name': 'Home', 
-                'url': url_for('admin_main.index'), 'icon': '<i class="fas fa-home"></i>'})
+
             Breadcrumb.map.append({'key': 'message', 'name': 'Messages', 
                 'url': url_for('admin_message.message'), 'icon': ''})
 
