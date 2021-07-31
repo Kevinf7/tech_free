@@ -39,7 +39,7 @@ class Config(object):
     MESSAGES_PER_PAGE = 10
 
     ### ADMIN PAGE ###
-    ADMIN_PAGE = True
+    ADMIN_PAGE = False
     PAGES_PER_PAGE = 10
     UPLOAD_PATH_PAGE = basedir / 'app/static/uploads/page'
     UPLOAD_PATH_THUMB_PAGE = basedir / 'app/static/uploads/page/thumbnails'

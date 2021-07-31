@@ -1,7 +1,7 @@
 INSERT INTO role (name)
-VALUES ('admin'),('user');
+VALUES ('admin');
 
-from app.admin_dashboard.models import User
+from app.admin_auth.models import User
 from app import db
 from datetime import datetime
 now = datetime.now()

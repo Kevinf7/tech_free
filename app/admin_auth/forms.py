@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm, RecaptchaField
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import InputRequired, Email, EqualTo, ValidationError, Length
 from flask_login import UserMixin
 from app.admin_auth.models import User
