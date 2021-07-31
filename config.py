@@ -17,6 +17,8 @@ class Config(object):
         SERVER_NAME = 'localhost:5000'
     else:
         SERVER_NAME = 'thechintan123.pythonanywhere.com'
+        SESSION_COOKIE_DOMAIN = False
+        SESSION_COOKIE_SECURE = True
     
     #####
 
